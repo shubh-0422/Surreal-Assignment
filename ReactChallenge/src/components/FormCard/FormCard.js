@@ -70,7 +70,7 @@ class FormCard extends React.Component {
                 alert("AADHAR NUMBER IS INVALID")
                 return false;
             }
-            else if(! /^([a-zA-Z]){5}([0-9]){4}([a-zA-Z]){1}?$/.test(this.state.panNumber)){
+            else if(! /^([a-zA-Z0-9]){10}?$/.test(this.state.panNumber)){
                 alert("PAN NUMBER IS INVALID")
                 return false
             }
@@ -170,7 +170,7 @@ class FormCard extends React.Component {
                     </Grid>
                     <Grid item xs={12}>
                         <TextField
-                        error={! /^([a-zA-Z]){5}([0-9]){4}([a-zA-Z]){1}?$/.test(state.panNumber)}
+                        error={! /^([a-zA-Z0-9]){10}?$/.test(this.state.panNumber)}
                         required
                         fullWidth
                         name="panNo"
