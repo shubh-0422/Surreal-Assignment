@@ -1,4 +1,10 @@
 import React, { useEffect, useState } from "react";
+
+
+import { useHistory } from "react-router";
+
+import { useDispatch } from "react-redux";
+
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 import Grid from '@mui/material/Grid';
@@ -9,10 +15,10 @@ import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
+
 import validator from 'validator'; 
+
 import {editUser} from '../../redux/actions/user';
-import { useHistory } from "react-router";
-import { useDispatch } from "react-redux";
 
 const FormCard = props => {
     const initialState = {
@@ -126,12 +132,13 @@ const FormCard = props => {
             <Container component="main" maxWidth="xs">
                 <Box
                     sx={{
-                        marginTop: 8,
+                        marginTop:5,
                         display: 'flex',
                         flexDirection: 'column',
                         alignItems: 'center',
+                        justifyContent:'center'
                     }}>
-                    <Box component="form" noValidate  sx={{ mt: 3 }}>
+                    <Box component="form" noValidate  sx={{ mt: 0 }}>
                         <Grid container spacing={2}>
                             <Grid item xs={12} >
                                 <TextField
@@ -260,9 +267,5 @@ const FormCard = props => {
             </Container>
         </ThemeProvider>
     );
-}
-// const mapStateToProps = ({user}) => {
-//     return {
-//     };
-// };
+};
 export default FormCard;

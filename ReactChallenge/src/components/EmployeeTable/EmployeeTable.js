@@ -1,6 +1,8 @@
+import React, { useState } from "react";
 
 import { useSelector } from "react-redux";
-import * as React from 'react';
+import { useHistory } from "react-router-dom";
+
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
@@ -9,10 +11,11 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Button from '@mui/material/Button';
 import EditIcon from '@mui/icons-material/Edit';
-import { useHistory } from "react-router-dom";
-import PropTypes from 'prop-types';
 import Typography from '@mui/material/Typography';
 import Dialog from '@mui/material/Dialog';
+
+import PropTypes from 'prop-types';
+
 import FormCard from '../FormCard/FormCard';
 
   
@@ -25,7 +28,7 @@ function SimpleDialog(props) {
 
   return (
     <Dialog onClose={handleClose} open={open}>
-      <Typography variant="h4" gutterBottom component="div" sx={{display:'flex',justifyContent:'center',pt:5,pd:5}}>
+      <Typography variant="h4" component="div" sx={{display:'flex',justifyContent:'center',pt:5}}>
         EDIT DETAILS IN MODAL
       </Typography>
       <FormCard  row={props.row} handleClose={handleClose} />
@@ -41,15 +44,18 @@ SimpleDialog.propTypes = {
 function EmployeeTable() {
   const data = useSelector((state) => state.userDetails);
   const history = useHistory();
-  const [open, setOpen] = React.useState(false);
-  const [row, setRow] = React.useState({});
+  const [open, setOpen] = useState(false);
+  const [row, setRow] = useState({});
+
   const handleClickOpen = (row) => {
     setRow(row)
     setOpen(true);
   };
+
   const handleClose = (value) => {
     setOpen(false);
   };
+  
   return (
     <>
     <Typography variant="h2" gutterBottom component="div" sx={{display:'flex',justifyContent:'center',pt:5,pd:5}}>
