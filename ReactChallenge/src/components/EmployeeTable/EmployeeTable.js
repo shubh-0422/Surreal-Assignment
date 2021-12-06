@@ -7,7 +7,6 @@ import TableCell from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
-import Paper from '@mui/material/Paper';
 import Button from '@mui/material/Button';
 import EditIcon from '@mui/icons-material/Edit';
 import { useHistory } from "react-router-dom";
@@ -56,19 +55,19 @@ function EmployeeTable() {
     <Typography variant="h2" gutterBottom component="div" sx={{display:'flex',justifyContent:'center',pt:5,pd:5}}>
         EMPLOYEE DETAILS
       </Typography>
-    <TableContainer component={Paper} className='App'>
-      <Table sx={{m:2}} aria-label="simple table">
+    <TableContainer  sx={{p:10}} className='App'>
+      <Table aria-label="simple table">
         <TableHead>
           <TableRow>
-            <TableCell>Serial No.</TableCell>
-            <TableCell align="center">Name</TableCell>
-            <TableCell align="center">Email</TableCell>
-            <TableCell align="center">Aadhar No.</TableCell>
-            <TableCell align="center">PAN No.</TableCell>
-            <TableCell align="center">Employee Type</TableCell>
-            <TableCell align="center">Joining Date</TableCell>
-            <TableCell align="center">Edit</TableCell>
-            <TableCell align="center">Modal Edit</TableCell>
+            <TableCell sx={{fontWeight:900}} >Serial No.</TableCell>
+            <TableCell sx={{fontWeight:900}} align="center">Name</TableCell>
+            <TableCell sx={{fontWeight:900}} align="center">Email</TableCell>
+            <TableCell sx={{fontWeight:900}} align="center">Aadhar No.</TableCell>
+            <TableCell sx={{fontWeight:900}} align="center">PAN No.</TableCell>
+            <TableCell sx={{fontWeight:900}} align="center">Employee Type</TableCell>
+            <TableCell sx={{fontWeight:900}} align="center">Joining Date</TableCell>
+            <TableCell sx={{fontWeight:900}} align="center">Edit</TableCell>
+            <TableCell sx={{fontWeight:900}} align="center">Modal Edit</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
@@ -90,7 +89,6 @@ function EmployeeTable() {
                     variant="outlined" 
                     startIcon={<EditIcon />}
                     onClick={()=>{
-                      console.log(row)
                       history.push({
                         pathname: '/form',
                         state:{...row}

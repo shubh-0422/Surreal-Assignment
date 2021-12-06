@@ -6,7 +6,7 @@ const user=(state = initialState, action) => {
     switch (action.type) {
         case EDIT:
             let newState=initialState.map((data)=>{
-                if(action.data.id==data.id)
+                if(action.data.id===data.id)
                     return action.data
                 else
                     return data
